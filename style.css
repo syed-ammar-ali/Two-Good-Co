@@ -1,0 +1,759 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  background-color: #f7f7f7;
+}
+#nav {
+  /* height: 100px; */
+  width: 100%;
+  /* background-color: burlywood; */
+  position: fixed;
+  z-index: 99;
+  padding: 25px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  /* gap: 87px; */
+}
+#nav a {
+  position: relative; /* Make the anchor tag a positioned element */
+  color: black; /* Set the default text color */
+  text-decoration: none; /* Remove the default underline */
+}
+
+#nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background-color: rgb(0, 0, 0);
+  bottom: -5px; /* Adjust the position of the underline */
+  left: 0;
+  transition: width 0.3s; /* Add smooth transition for the width change */
+}
+#nav a:hover::after {
+  width: 100%; /* Increase the width to create the underline effect */
+}
+#nav #nav-part2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* gap: 80px; */
+}
+
+#nav-part2 #links a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #333;
+  font-weight: 400;
+  font-size: 0.95vw;
+  margin: 0 30px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#nav-part2 #links i {
+  font-size: 15px;
+  font-weight: 100;
+  /* background-color: rebeccapurple; */
+}
+#icons {
+  padding: 9px 0;
+  border-radius: 50px;
+  background-color: #f7f7f7;
+}
+
+#nav-part2 #icons i {
+  font-size: 17px;
+  margin: 0 30px;
+  font-weight: 100;
+}
+#cursor {
+  position: fixed;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: #d3d3d37d;
+  scale: 0;
+  transform: translate(-50%, -50%);
+}
+#page1 {
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+  padding: 0 2vw;
+  padding-top: 37vh;
+  /* background-color: rgb(49, 49, 114); */
+}
+#page1 h1 {
+  font-family: futura;
+  font-size: 16vw;
+  text-transform: uppercase;
+  letter-spacing: -10px;
+  line-height: 14vw;
+}
+#video-container {
+  height: 100vh;
+  width: 100%;
+  /* background-color: black; */
+  margin-top: 3vh;
+  position: relative;
+}
+#video-container video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+#video-container #play {
+  padding: 4vw 3.2vw;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  position: fixed;
+  font-size: 1.5vw;
+  font-family: futura;
+  opacity: 0;
+  scale: 0;
+}
+#purpose {
+  display: flex;
+  /* background-color: burlywood; */
+  margin: 80px 30px;
+}
+
+#purpose #left {
+  /* background-color: forestgreen; */
+  width: 68%;
+}
+#purpose #left h1 {
+  font-size: 4.3vw;
+  font-family: futura;
+  line-height: 4.5vw;
+}
+#purpose #right {
+  /* background-color: red; */
+  width: 23%;
+}
+#purpose #right p {
+  font-size: 1.2vw;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 30px;
+  /* letter-spacing: 1px; */
+  word-spacing: 1px;
+  line-height: 2vw;
+  font-weight: 300;
+}
+#purpose #right a {
+  /* text-decoration: none; */
+  font-size: 0.9vw;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  word-spacing: 2px;
+  color: black;
+}
+#purpose #right a {
+  position: relative; /* Make the anchor tag a positioned element */
+  color: black; /* Set the default text color */
+  text-decoration: none; /* Remove the default underline */
+}
+
+#purpose #right a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background-color: rgb(0, 0, 0);
+  bottom: -5px; /* Adjust the position of the underline */
+  left: 0;
+  transition: width 0.3s; /* Add smooth transition for the width change */
+}
+#purpose #right a:hover::after {
+  width: 100%; /* Increase the width to create the underline effect */
+}
+#page2 {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* margin-top: 3vh; */
+  padding: 0 2vw;
+  margin-top: 5vw;
+}
+#page2 .elem {
+  height: 100%;
+  width: 32%;
+  /* background-color: red; */
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#page2 .elem img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  scale: 1;
+}
+/* #page2 .elem .dets {
+  height: 50px;
+  border-radius: 50px;
+  width: 80%;
+  position: absolute;
+  z-index: 9;
+  background-color: rgb(229, 156, 186);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+#page2 .elem .dets:hover {
+  height: 200px;
+} */
+#page2 .elem .dets {
+  height: 50px;
+  border-radius: 50px;
+  width: 80%;
+  position: absolute;
+  background-color: rgb(229, 156, 186);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+/* #page2 .elem .dets:hover {
+  height: 200px;
+  padding-bottom: 150px;
+  border-radius: 30px;
+} */
+
+#page2 #elem1 > .dets {
+  background-color: #f5dfcf;
+}
+#page2 #elem2 > .dets {
+  background-color: #edf3ff;
+}
+#page2 #elem3 > .dets {
+  background-color: #ffffff;
+}
+#page2 .elem .dets .dets-items {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1vw;
+}
+#page2 .elem .dets #bold {
+  font-weight: bold;
+}
+#page2 .dets .dot {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: rgb(0, 0, 0);
+}
+#page2 .dets i {
+  cursor: pointer;
+}
+#page3 {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+#page3 .child {
+  height: 80vh;
+  width: 40vw;
+  /* background-color: red; */
+  /* border: 2px solid black; */
+  /* margin: 3vw 2vw; */
+  position: relative;
+  margin: 5vw 0;
+  display: flex;
+  flex-direction: column;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#page3 .child img {
+  height: 90%;
+  width: 90%;
+  object-fit: cover;
+}
+.info {
+  /* background-color: crimson; */
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8vw;
+  font-weight: lighter;
+  text-transform: uppercase;
+  line-height: 2vw;
+  margin-top: 70px;
+}
+#impact {
+  height: 100vh;
+  display: flex;
+  /* background-color: burlywood; */
+  margin: 70px 28px;
+}
+
+#impact #left {
+  /* background-color: forestgreen; */
+  width: 23%;
+}
+#impact #left h1 {
+  font-size: 1.8vw;
+  font-family: futura;
+  margin-bottom: 30px;
+}
+
+#impact #left p {
+  font-size: 1.2vw;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 30px;
+  word-spacing: 1px;
+  word-spacing: 1px;
+  line-height: 2vw;
+  font-weight: 300;
+}
+#impact #left a {
+  /* text-decoration: none; */
+  font-size: 0.9vw;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  word-spacing: 2px;
+  color: black;
+  /* font-weight: 300; */
+}
+#impact #left a {
+  position: relative; /* Make the anchor tag a positioned element */
+  color: black; /* Set the default text color */
+  text-decoration: none; /* Remove the default underline */
+}
+
+#impact #left a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background-color: rgb(0, 0, 0);
+  bottom: -5px; /* Adjust the position of the underline */
+  left: 0;
+  transition: width 0.3s; /* Add smooth transition for the width change */
+}
+#impact #left a:hover::after {
+  width: 100%; /* Increase the width to create the underline effect */
+}
+#impact #right {
+  /* background-color: red; */
+  height: 97%;
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 125px;
+}
+#impact .example {
+  width: 48.5%;
+  height: 100%;
+  overflow: hidden;
+  /* background-color: aquamarine; */
+  /* justify-content: center; */
+}
+#impact .example img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  scale: 1.1;
+}
+#footer {
+  height: 100vh;
+  /* background-color: grey; */
+}
+#footer #pehla {
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 25px;
+  /* background-color: grey; */
+}
+#footer #pehla .content {
+  /* width: 33%; */
+  /* height: 10%; */
+
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  /* background-color: magenta; */
+}
+#footer #pehla .content h3 {
+  margin-bottom: 20px;
+  font-size: 0.95vw;
+  color: #333333b0;
+}
+
+#footer #pehla .content a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.1vw;
+  margin-bottom: 6px;
+}
+#footer #pehla #questions {
+  /* background-color: plum; */
+  text-align: right;
+}
+#footer #logo {
+  height: 100%;
+  width: 50%;
+  overflow: hidden;
+  /* background-color: red; */
+  /* margin: 20px 0; */
+}
+#footer #logo img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  scale: 1.1;
+}
+#footer #dusra {
+  height: 50%;
+  /* background-color: tan; */
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+  /* text-align: center; */
+  font-family: Arial, Helvetica, sans-serif;
+}
+#footer #dusra #uparwala {
+  display: flex;
+  gap: 30px;
+  font-size: 0.9vw;
+  padding: 50px 0;
+}
+#footer #dusra #uparwala h3,
+a {
+  color: #333333a7;
+  text-decoration: none;
+}
+#footer #dusra #nichewala {
+  width: 62%;
+  text-align: center;
+  font-size: 1.1vw;
+  /* background-color: rgb(194, 194, 248); */
+  line-height: 1.6vw;
+}
+@media (max-width: 600px) {
+  #nav {
+    /* height: 100px; */
+    width: 100%;
+    /* background-color: burlywood; */
+    position: fixed;
+    z-index: 99;
+    /* padding: 25px; */
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    /* gap: 87px; */
+  }
+  #nav #nav-part1 svg {
+    width: 90px;
+    margin-left: -10px;
+    margin-top: -10px;
+  }
+  #nav #nav-part2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* gap: 80px; */
+  }
+
+  #nav-part2 #links a {
+    display: none;
+  }
+  #nav-part2 #links i {
+    font-size: 15px;
+    font-weight: 100;
+    /* background-color: rebeccapurple; */
+  }
+  #icons {
+    padding: 10px 0;
+    margin-top: -15px;
+    margin-right: -20px;
+    border-radius: 50px;
+    /* background-color: #b53535; */
+  }
+
+  #nav-part2 #icons i {
+    font-size: 20px;
+    /* margin: 0 25px; */
+    /* margin-top: -10px; */
+    font-weight: 100;
+  }
+  #page1 {
+    min-height: 70vh;
+    /* position: relative; */
+    /* width: 100%; */
+    padding: 0 4vw;
+    padding-top: 25vh;
+    /* background-color: rgb(49, 49, 114); */
+  }
+  #page1 h1 {
+    /* font-family: futura; */
+    font-size: 15vw;
+    /* text-transform: uppercase; */
+    letter-spacing: -3px;
+    line-height: 13vw;
+  }
+  #video-container {
+    height: 25vh;
+    /* width: 100%; */
+    /* background-color: black; */
+    margin-top: 1.5vh;
+    /* position: relative; */
+  }
+  #video-container #play {
+    padding: 11vw 8vw;
+    /* background-color: black;
+    color: white;
+    border-radius: 50%; */
+    position: absolute;
+    font-size: 5vw;
+    /* font-family: futura; */
+    opacity: 1;
+    scale: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #purpose {
+    display: flex;
+    /* background-color: burlywood; */
+    flex-direction: column;
+    margin: 10px 10px;
+    text-align: center;
+  }
+
+  #purpose #left {
+    /* background-color: forestgreen; */
+    width: 100%;
+  }
+  #purpose #left h1 {
+    font-size: 7vw;
+    /* font-family: futura; */
+    line-height: 7vw;
+    margin: 40px 0;
+  }
+  #purpose #right {
+    /* background-color: red; */
+    width: 100%;
+  }
+  #purpose #right p {
+    font-size: 3.5vw;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    /* margin-bottom: 30px; */
+    /* letter-spacing: 1px; */
+    word-spacing: 0px;
+    line-height: 5.5vw;
+    /* font-weight: 300; */
+  }
+  #purpose #right a {
+    /* text-decoration: none; */
+    font-size: 2.5vw;
+  }
+  .info {
+    font-size: 3vw;
+    font-weight: lighter;
+    line-height: 5vw;
+  }
+  #page2 {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4vw;
+  }
+  #page2 .elem {
+    height: 70vh;
+    width: 100%;
+    margin-bottom: 4vw;
+  }
+  #page2 .elem .dets .dets-items {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3.5vw;
+  }
+  #page2 .elem .dets #bold {
+    font-weight: bold;
+  }
+  #page2 .dets .dot {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+  }
+  #page2 .dets i {
+    cursor: pointer;
+  }
+  #page3 {
+    min-height: 50vh;
+  }
+  #page3 .child {
+    height: 50vh;
+    width: 90vw;
+  }
+  #page3 .child img {
+    height: 100%;
+  }
+  #impact {
+    height: 50vh;
+    display: flex;
+    flex-direction: column-reverse;
+    /* background-color: burlywood; */
+    /* margin: 70px 28px; */
+  }
+
+  #impact #left {
+    /* background-color: forestgreen; */
+    width: 100%;
+    /* height: 40%; */
+    margin-top: 20px;
+  }
+  #impact #left h1 {
+    font-size: 5.5vw;
+    font-family: futura;
+    margin-bottom: 10px;
+  }
+
+  #impact #left p {
+    font-size: 3.5vw;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 30px;
+    word-spacing: 0;
+    line-height: 4vw;
+    font-weight: 300;
+  }
+  #impact #left a {
+    /* text-decoration: none; */
+    font-size: 3vw;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    word-spacing: 2px;
+    color: black;
+    /* font-weight: 300; */
+  }
+  #impact #right {
+    /* background-color: red; */
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0;
+  }
+  #impact .example {
+    width: 48%;
+    height: 100%;
+    /* overflow: hidden; */
+
+    /* background-color: aquamarine; */
+    /* justify-content: center; */
+  }
+  #impact .example img {
+    scale: 1;
+  }
+  #footer {
+    height: 70vh;
+    /* background-color: grey; */
+  }
+  #footer #pehla {
+    height: 70%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 25px;
+    /* background-color: grey; */
+    flex-wrap: wrap;
+  }
+  #footer #pehla .content {
+    /* width: 33%; */
+    /* height: 10%; */
+
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    /* background-color: magenta; */
+  }
+  #footer #pehla .content h3 {
+    margin-bottom: 15px;
+    font-size: 2vw;
+    color: #333333b0;
+  }
+
+  #footer #pehla .content a {
+    /* text-decoration: none;
+  color: black; */
+    font-size: 2.5vw;
+    margin-bottom: 6px;
+  }
+
+  #footer #logo {
+    order: -1;
+    height: 50%;
+    width: 100%;
+    overflow: hidden;
+    /* background-color: red; */
+    margin-bottom: 20px;
+  }
+  #footer #logo img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    scale: 1.1;
+  }
+  #footer #dusra {
+    height: 30%;
+    /* width: 100%; */
+    /* background-color: hotpink; */
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
+    /* text-align: center; */
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  #footer #dusra #uparwala {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 30px;
+    font-size: 2vw;
+    /* background-color: tan; */
+    padding-top: 30px;
+  }
+  #footer #dusra #uparwala h3,
+  a {
+    color: #333333a7;
+    text-decoration: none;
+  }
+  #footer #dusra #nichewala {
+    width: 95%;
+    order: -1;
+    text-align: start;
+    font-size: 3vw;
+    /* background-color: rgb(194, 194, 248);C */
+    line-height: 4vw;
+  }
+}
